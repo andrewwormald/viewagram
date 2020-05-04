@@ -1,7 +1,7 @@
 {
   "name": "udacity-c2-frontend",
   "version": "0.0.1",
-  "author": "Ionic Framework",
+  "author": "Andrew Wormald",
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
