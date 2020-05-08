@@ -59,3 +59,7 @@ spec:
             secretKeyRef:
               name: jwt-secret
               key: JWT_SECRET
+				volumeMounts:
+				- name: aws-secret
+					mountPath: "/root/.aws/"
+					readOnly: true
