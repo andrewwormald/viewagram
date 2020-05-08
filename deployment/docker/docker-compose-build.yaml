@@ -6,13 +6,13 @@ services:
     image: andrewwormald/reverseproxy
   backend_user:
     build:
-      context: ../backend-user
+      context: ../../backend-user
     image: andrewwormald/udagram-user
   backend_feed:
     build:
-      context: ../backend-feed
+      context: ../../backend-feed
     image: andrewwormald/udagram-feed
   frontend:
     build:
-      context: ../frontend
+      context: ../../frontend
     image: andrewwormald/udagram-frontend:local
