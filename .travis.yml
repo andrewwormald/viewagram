@@ -34,20 +34,20 @@ job:
       - docker push andrewjameswormald/udagram:feed-latest
       - docker push andrewjameswormald/udagram:user-latest
       - docker push andrewjameswormald/udagram:frontend-latest
-			- docker push andrewjameswormald/udagram:reverseproxy-latest
-		- stage: "Deploy"
-			name: "Checking pods"
-			script:
-				- kubectl get pods
-			name: "Deploying backend user service"
-			script:
-				- kubectl rollout restart deployment/backend-user
-			name: "Deploying backend feed service"
-			script:
-				- kubectl rollout restart deployment/backend-feed
-			name: "Deploying reverseproxy"
-			script:
-				- kubectl rollout restart deployment/reverseproxy
-			name: "Deploying frontend application"
-			script:
-				- kubectl rollout restart deployment/frontend
+      - docker push andrewjameswormald/udagram:reverseproxy-latest
+    - stage: "Deploy"
+      name: "Checking pods"
+      script:
+        - kubectl get pods
+      name: "Deploying backend user service"
+      script:
+        - kubectl rollout restart deployment/backend-user
+      name: "Deploying backend feed service"
+      script:
+        - kubectl rollout restart deployment/backend-feed
+      name: "Deploying reverseproxy"
+      script:
+        - kubectl rollout restart deployment/reverseproxy
+      name: "Deploying frontend application"
+      script:
+        - kubectl rollout restart deployment/frontend
