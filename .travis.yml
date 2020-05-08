@@ -30,10 +30,6 @@ job:
     script:
       - docker --version # print the version for logging
       - docker-compose -f ./deployment/docker/docker-compose-build.yaml build --parallel
-      - docker tag backend-feed andrewjameswormald/udagram:feed-latest
-      - docker tag backend-user andrewjameswormald/udagram:user-latest
-      - docker tag frontend andrewjameswormald/udagram:frontend-latest
-      - docker tag reverseproxy andrewjameswormald/udagram:reverseproxy-latest
       - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
       - docker push andrewjameswormald/udagram:feed-latest
       - docker push andrewjameswormald/udagram:user-latest
