@@ -31,10 +31,7 @@ job:
       - docker --version # print the version for logging
       - docker-compose -f ./deployment/docker/docker-compose-build.yaml build --parallel
       - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-      - docker push andrewjameswormald/udagram:feed-latest
-      - docker push andrewjameswormald/udagram:user-latest
-      - docker push andrewjameswormald/udagram:frontend-latest
-      - docker push andrewjameswormald/udagram:reverseproxy-latest
+      - docker-compose -f ./deployment/docker/docker-compose-build.yaml push
   - stage: "Deploy"
     name: "Deploying backend user service"
     script:
