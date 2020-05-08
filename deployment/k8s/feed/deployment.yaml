@@ -17,46 +17,46 @@ spec:
       containers:
       - name: backend-feed
         image: andrewjameswormald/udagram:feed-latest
-        ports:
-				- containerPort: 8200
-				env:
-					- name: POSTGRESS_USERNAME
-					valueFrom:
-						secretKeyRef:
-							name: db-name
-							key: POSTGRESS_USERNAME
-					- name: POSTGRESS_PASSWORD
-					valueFrom:
-						secretKeyRef:
-							name: db-password
-							key: POSTGRESS_PASSWORD
-          - name: POSTGRESS_DB
-					valueFrom:
-						secretKeyRef:
-							name: db-database
-							key: POSTGRESS_DB
-					- name: POSTGRESS_HOST
-					valueFrom:
-						secretKeyRef:
-							name: db-uri
-							key: POSTGRESS_HOST
-					- name: AWS_REGION
-					valueFrom:
-						secretKeyRef:
-							name: aws-region
-							key: AWS_REGION
-					- name: AWS_PROFILE
-					valueFrom:
-						secretKeyRef:
-							name: aws-profile
-							key: AWS_PROFILE
-					- name: AWS_BUCKET
-					valueFrom:
-						secretKeyRef:
-							name: aws-s3-bucket
-							key: AWS_BUCKET
-					- name: JWT_SECRET
-					valueFrom:
-						secretKeyRef:
-							name: jwt-secret
-							key: JWT_SECRET
+        imagePullPolicy: Always
+        env:
+        - name: POSTGRESS_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: db-name
+              key: POSTGRESS_USERNAME
+        - name: POSTGRESS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-password
+              key: POSTGRESS_PASSWORD
+        - name: POSTGRESS_DB
+          valueFrom:
+            secretKeyRef:
+              name: db-database
+              key: POSTGRESS_DB
+        - name: POSTGRESS_HOST
+          valueFrom:
+            secretKeyRef:
+              name: db-uri
+              key: POSTGRESS_HOST
+        - name: AWS_REGION
+          valueFrom:
+            secretKeyRef:
+              name: aws-region
+              key: AWS_REGION
+        - name: AWS_PROFILE
+          valueFrom:
+            secretKeyRef:
+              name: aws-profile
+              key: AWS_PROFILE
+        - name: AWS_BUCKET
+          valueFrom:
+            secretKeyRef:
+              name: aws-s3-bucket
+              key: AWS_BUCKET
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: jwt-secret
+              key: JWT_SECRET
+
