@@ -18,7 +18,7 @@ job:
     script: echo "No tests found"
   - stage: "Build"
     if: branch = master
-    name: "Docker build"
+    name: "Build"
     script:
       - docker --version # print the version for logging
       - docker build -t backend-feed ./backend-feed
@@ -29,26 +29,15 @@ job:
       - docker tag frontend andrewjameswormald/udagram:frontend-latest
       - docker build -t reverseproxy ./deployment
       - docker tag reverseproxy andrewjameswormald/udagram:reverseproxy-latest
-    name: "Docker build"
-    script:
       - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
       - docker push andrewjameswormald/udagram:feed-latest
       - docker push andrewjameswormald/udagram:user-latest
       - docker push andrewjameswormald/udagram:frontend-latest
       - docker push andrewjameswormald/udagram:reverseproxy-latest
   - stage: "Deploy"
-    name: "Checking pods"
-    script:
-      - kubectl get pods
     name: "Deploying backend user service"
     script:
       - kubectl rollout restart deployment/backend-user
-    name: "Deploying backend feed service"
-    script:
       - kubectl rollout restart deployment/backend-feed
-    name: "Deploying reverseproxy"
-    script:
       - kubectl rollout restart deployment/reverseproxy
-    name: "Deploying frontend application"
-    script:
       - kubectl rollout restart deployment/frontend
