@@ -36,6 +36,7 @@ job:
     name: "Deploying backend user service"
 		script:
 			- kubectl get pods
+			- kubectl get services
       - kubectl rollout restart deployment/backend-user
       - kubectl rollout restart deployment/backend-feed
       - kubectl rollout restart deployment/reverseproxy
