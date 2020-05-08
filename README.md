@@ -3,9 +3,9 @@
 
 ### Screenshots:
 
-<img width="30" height="30" src="./screenshots/pods.png"/>
-<img src="./screenshots/mobile.png"/>
-<img src="./screenshots/desktop.png"/>
+<img width="33%" src="./screenshots/pods.png"/>
+<img width="33%" src="./screenshots/mobile.png"/>
+<img width="33%" src="./screenshots/desktop.png"/>
 
 ### Github repo:
 https://github.com/andrewwormald/udagram
