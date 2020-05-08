@@ -15,4 +15,4 @@ services:
   frontend:
     build:
       context: ../../frontend
-    image: frontend andrewjameswormald/udagram:frontend-latest
+    image: andrewjameswormald/udagram:frontend-latest
