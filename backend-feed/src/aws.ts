@@ -28,7 +28,12 @@ export function getGetSignedUrl( key: string ): string{
         Bucket: c.aws_media_bucket,
         Key: key,
         Expires: signedUrlExpireSeconds
-      });
+			});
+
+			console.log(c.aws_media_bucket)
+			console.log(c.aws_reigion)
+			console.log(c.aws_profile)
+			console.log(url)
 
     return url;
 }

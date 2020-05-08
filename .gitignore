@@ -1,1 +1,2 @@
 deployment/dev_profile.sh
+deployment/k8s/secret/*
