@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: backend-feed
   labels:
-    app: backend-feed
+    service: backend-feed
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: backend-feed
+      service: backend-feed
   template:
     metadata:
       labels:
-        app: backend-feed
+        service: backend-feed
     spec:
       containers:
       - name: backend-feed
