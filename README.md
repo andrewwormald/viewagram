@@ -2,10 +2,9 @@
 <img src="https://api.travis-ci.org/andrewwormald/udagram.svg?branch=master&status=started"/>
 
 ### Screenshots:
-
-<img width="33%" src="./screenshots/pods.png"/>
-<img width="33%" src="./screenshots/mobile.png"/>
-<img width="33%" src="./screenshots/desktop.png"/>
+<img style="width:100%; display: inline;" src="./screenshots/k8s.png"/>
+<img style="width:100%; display: inline;" src="./screenshots/desktop.png"/>
+<img style="height:500px; display: inline;" src="./screenshots/mobile.png"/>
 
 ### Github repo:
 https://github.com/andrewwormald/udagram
