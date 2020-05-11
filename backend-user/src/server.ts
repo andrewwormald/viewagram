@@ -30,8 +30,12 @@ const c = config.dev;
   // Root URI call
   app.get( "/", async ( req, res ) => {
     res.send( "/api/v0/" );
-  } );
+	});
 
+	// Health endpoint for readiness probe
+  app.get( "/health", async ( req, res ) => {
+    res.sendStatus(200);
+  });
 
   // Start the Server
   app.listen( port, () => {

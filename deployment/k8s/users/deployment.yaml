@@ -6,6 +6,11 @@ metadata:
     service: backend-user
 spec:
   replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 100%
   selector:
     matchLabels:
       service: backend-user
@@ -18,6 +23,13 @@ spec:
       - name: backend-user
         image: andrewjameswormald/udagram:user-latest
         imagePullPolicy: Always
+        readinessProbe:
+          httpGet:
+             path: /health
+             port: 8080
+             initialDelaySeconds: 5
+             periodSeconds: 5
+             successThreshold: 1
         env:
         - name: URL
           valueFrom:
