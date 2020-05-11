@@ -2,6 +2,7 @@
 <img src="https://api.travis-ci.org/andrewwormald/udagram.svg?branch=master&status=started"/>
 
 ### Screenshots:
+<img style="width:100%; display: inline;" src="./screenshots/travis_build_and_deploy.png"/>
 <img style="width:100%; display: inline;" src="./screenshots/k8s.png"/>
 <img style="width:100%; display: inline;" src="./screenshots/desktop.png"/>
 <img style="height:500px; display: inline;" src="./screenshots/mobile.png"/>
