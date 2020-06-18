@@ -38,7 +38,6 @@ export class AuthService {
                   password: password,
               })
               .then((res) => {
-                  console.log(res);
                 this.setTokenAndUser(res.token, res.user);
                 return res;
               })

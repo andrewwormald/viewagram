@@ -17,6 +17,8 @@ export class FeedUploadComponent implements OnInit {
   file: File;
   uploadForm: FormGroup;
 
+  isUploading = false;
+
   constructor(
     private feed: FeedProviderService,
     private formBuilder: FormBuilder,
@@ -55,11 +57,17 @@ export class FeedUploadComponent implements OnInit {
     this.loadingController.create();
 
     if (!this.uploadForm.valid || !this.file) { return; }
+
+    this.isUploading = true;
     this.feed.uploadFeedItem(this.uploadForm.controls.caption.value, this.file)
       .then((result) => {
         this.modalController.dismiss();
         this.loadingController.dismiss();
-      });
+        this.isUploading = false;
+      })
+        .catch(() => {
+          this.isUploading = false;
+        });
   }
 
   cancel() {

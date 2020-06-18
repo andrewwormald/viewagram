@@ -41,6 +41,7 @@ export class AuthLoginComponent implements OnInit {
         this.loginForm.controls.password.value)
       .then((user) => {
         this.modal.dismiss();
+        location.reload();
       })
       .catch((e) => {
         this.error = e.statusText;

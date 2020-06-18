@@ -13,11 +13,14 @@ export class FeedItemComponent implements OnInit {
 
   constructor(private feedService: FeedProviderService) {}
 
-  ngOnInit() {
-    console.log(this.feedItem)
-  }
+  ngOnInit() {}
 
   async incrementLike() {
-    await this.feedService.incrementLikeCounter(this.feedItem.id)
+    this.feedItem.likeCount++
+    try {
+      await this.feedService.incrementLikeCounter(this.feedItem.id)
+    } catch (e) {
+      this.feedItem.likeCount--
+    }
   }
 }
