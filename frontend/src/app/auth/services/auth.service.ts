@@ -33,8 +33,12 @@ export class AuthService {
 
   async login(email: string, password: string): Promise<any> {
     return this.api.post('/users/auth/login',
-              {email: email, password: password})
+              {
+                  email: email,
+                  password: password,
+              })
               .then((res) => {
+                  console.log(res);
                 this.setTokenAndUser(res.token, res.user);
                 return res;
               })
@@ -49,7 +53,11 @@ export class AuthService {
 
   register(user: User, password: string): Promise<any> {
     return this.api.post('/users/auth/',
-              {email: user.email, password: password})
+              {
+                email: user.email,
+                username: user.name,
+                password: password,
+              })
               .then((res) => {
                 this.setTokenAndUser(res.token, res.user);
                 return res;

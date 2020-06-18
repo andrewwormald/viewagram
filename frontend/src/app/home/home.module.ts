@@ -16,6 +16,10 @@ import { HomePage } from './home.page';
       {
         path: '',
         component: HomePage
+      },
+      {
+        path: 'home',
+        component: HomePage
       }
     ])
   ],

@@ -1,7 +1,7 @@
 version: "3"
 services:
   reverseproxy:
-    image: andrewwormald/reverseproxy
+    image: andrewjameswormald/udaview:reverseproxy-latest
     ports:
       - 8080:8080
     restart: always
@@ -9,7 +9,7 @@ services:
       - backend-user
       - backend-feed
   backend-user:
-    image: andrewwormald/udagram-user
+    image: andrewjameswormald/udaview:user-latest
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
@@ -23,7 +23,7 @@ services:
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8300"
   backend-feed:
-    image: andrewwormald/udagram-feed
+    image: andrewjameswormald/udaview:feed-latest
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
@@ -37,6 +37,6 @@ services:
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8200"
   frontend:
-    image: andrewwormald/udagram-frontend:local
+    image: andrewjameswormald/udaview:frontend-latest
     ports:
       - "8100:80"

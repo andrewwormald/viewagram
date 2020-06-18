@@ -1,10 +1,18 @@
 <ion-card class="photo-card" *ngIf="feedItem">
   <ion-img [src]="feedItem.url"></ion-img>
-  <!-- <ion-card-header>
-    <ion-card-subtitle>Get Started</ion-card-subtitle>
-    <ion-card-title></ion-card-title>
-  </ion-card-header> -->
+  <div class="interactive" (click)="incrementLike()">
+    <ion-icon class="interactive-icon" name="thumbs-up"></ion-icon>
+    <span *ngIf="feedItem.likeCount">{{feedItem.likeCount}}</span>
+    <span *ngIf="!feedItem.likeCount">0</span>
+  </div>
   <ion-card-content>
-    <p>{{feedItem.caption}}</p>
+    <p>
+      <span class="owner-name">
+        {{feedItem.owner}}
+      </span>
+      <span class="owner-caption">
+        {{feedItem.caption}}
+      </span>
+    </p>
   </ion-card-content>
 </ion-card>

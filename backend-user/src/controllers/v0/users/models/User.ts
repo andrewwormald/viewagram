@@ -8,6 +8,9 @@ export class User extends Model<User> {
   public email!: string;
 
   @Column
+  public username!: string;
+
+  @Column
   public password_hash!: string; // for nullable fields
 
   @Column
@@ -20,7 +23,8 @@ export class User extends Model<User> {
 
   short() {
     return {
-      email: this.email
+      email: this.email,
+      name: this.username
     }
   }
 }

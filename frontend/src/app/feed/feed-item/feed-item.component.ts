@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { FeedItem } from '../models/feed-item.model';
+import {FeedProviderService} from "../services/feed.provider.service";
 
 @Component({
   selector: 'app-feed-item',
@@ -10,8 +11,13 @@ import { FeedItem } from '../models/feed-item.model';
 export class FeedItemComponent implements OnInit {
   @Input() feedItem: FeedItem;
 
-  constructor() { }
+  constructor(private feedService: FeedProviderService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.feedItem)
+  }
 
+  async incrementLike() {
+    await this.feedService.incrementLikeCounter(this.feedItem.id)
+  }
 }

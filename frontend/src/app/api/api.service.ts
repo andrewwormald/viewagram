@@ -51,6 +51,16 @@ export class ApiService {
             });
   }
 
+  patch(endpoint, data): Promise<any> {
+      const url = `${API_HOST}${endpoint}`;
+      return this.http.patch<HttpEvent<any>>(url, data, this.httpOptions)
+          .toPromise()
+          .catch((e) => {
+              this.handleError(e);
+              throw e;
+          });
+  }
+
   async upload(endpoint: string, file: File, payload: any): Promise<any> {
     const signed_url = (await this.get(`${endpoint}/signed-url/${file.name}`)).url;
 

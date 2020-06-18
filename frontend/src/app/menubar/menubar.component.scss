@@ -1,5 +1,9 @@
-ion-title { 
+ion-title {
+    min-height: 65px;
     font-weight: bold;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Lobster';
     font-size: 180%;
+    background: -webkit-linear-gradient(#eee, #3880ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }

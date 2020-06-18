@@ -29,6 +29,4 @@ export class FeedListComponent implements OnInit, OnDestroy {
       subscription.unsubscribe();
     }
   }
-
-
 }

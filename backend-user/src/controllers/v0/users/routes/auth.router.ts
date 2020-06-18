@@ -6,9 +6,7 @@ import * as c from '../../../../config/config';
 import * as bcrypt from 'bcrypt';
 import * as jwt from 'jsonwebtoken';
 import { NextFunction } from 'connect';
-
 import * as EmailValidator from 'email-validator';
-import { config } from 'bluebird';
 
 const router: Router = Router();
 
@@ -89,10 +87,16 @@ router.post('/login', async (req: Request, res: Response) => {
 //register a new user
 router.post('/', async (req: Request, res: Response) => {
     const email = req.body.email;
+    const username = req.body.username;
     const plainTextPassword = req.body.password;
     // check email is valid
     if (!email || !EmailValidator.validate(email)) {
         return res.status(400).send({ auth: false, message: 'Email is required or malformed' });
+    }
+
+    // check username valid
+    if (!username) {
+        return res.status(400).send({ auth: false, message: 'Username is required' });
     }
 
     // check email password valid
@@ -111,6 +115,7 @@ router.post('/', async (req: Request, res: Response) => {
 
     const newUser = await new User({
         email: email,
+        username: username,
         password_hash: password_hash
     });
 

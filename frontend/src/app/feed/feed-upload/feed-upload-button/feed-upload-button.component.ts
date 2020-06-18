@@ -35,4 +35,8 @@ export class FeedUploadButtonComponent implements OnInit, OnDestroy {
     return await modal.present();
   }
 
+  getUploadButton() {
+    return '../assets/icon/plus.svg';
+  }
+
 }

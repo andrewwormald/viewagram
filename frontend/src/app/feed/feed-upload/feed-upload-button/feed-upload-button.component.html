@@ -3,5 +3,5 @@
   type="submit"
   [disabled]="!isLoggedIn"
   (click)="presentUploadForm($event)">
-  Create a New Post
+  <img [src]="getUploadButton()" alt="">
 </ion-button>
