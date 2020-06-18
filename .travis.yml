@@ -25,22 +25,22 @@ install:
 
 job:
   include:
-  - stage: "Test"
-    script: echo "No tests found"
-  - stage: "Build"
-    if: branch = master
-    name: "Build"
-    script:
-      - docker --version # print the version for logging
-      - docker-compose -f ./deployment/docker/docker-compose-build.yaml build --parallel
-      - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-      - docker-compose -f ./deployment/docker/docker-compose-build.yaml push
-  - stage: "Deploy"
-    name: "Deploying backend user service"
-    script:
-      - kubectl get pods
-      - kubectl get services
-      - kubectl rollout restart deployment/backend-user
-      - kubectl rollout restart deployment/backend-feed
-      - kubectl rollout restart deployment/reverseproxy
-      - kubectl rollout restart deployment/frontend
+    - stage: "Test"
+      script: echo "No tests found"
+    - stage: "Build"
+      if: branch = master
+      name: "Build"
+      script:
+        - docker --version # print the version for logging
+        - docker-compose -f ./deployment/docker/docker-compose-build.yaml build --parallel
+        - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        - docker-compose -f ./deployment/docker/docker-compose-build.yaml push
+    - stage: "Deploy"
+      name: "Deploying backend user service"
+      script:
+        - kubectl get pods
+        - kubectl get services
+        - kubectl rollout restart deployment/backend-user
+        - kubectl rollout restart deployment/backend-feed
+        - kubectl rollout restart deployment/reverseproxy
+        - kubectl rollout restart deployment/frontend
