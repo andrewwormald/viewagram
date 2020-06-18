@@ -2,11 +2,11 @@
 <img src="https://api.travis-ci.org/andrewwormald/viewagram.svg?branch=master"/>
 
 ### Screenshots:
-<img style="width:100%; display: inline;" src="./screenshots/desktop.png"/>
+<img style="width:100%; display: inline;" src="./screenshots/desktop_pc.png"/>
 <img style="width:100%; display: inline;" src="./screenshots/travis.png"/>
 <img style="width:100%; display: inline;" src="./screenshots/kube_screenshot.png"/>
 <img style="width:550px;" src="./screenshots/api-endpoint.png"/>
-<img style="width:550px;" src="./screenshots/mobile.png"/>
+<img style="width:550px;" src="./screenshots/mobile_view.png"/>
 
 ### Github repo:
 https://github.com/andrewwormald/viewagram
