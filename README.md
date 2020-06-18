@@ -1,4 +1,4 @@
-# Udagram
+# Viewagram
 <img src="https://api.travis-ci.org/andrewwormald/viewagram.svg?branch=master"/>
 
 ### Screenshots:
