@@ -1,4 +1,4 @@
 deployment/dev_profile.sh
 deployment/kube_profile.sh
-deployment/kube_setup.sh
+deployment/kube_deploy.sh
 deployment/k8s/secret/*

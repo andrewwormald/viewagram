@@ -18,7 +18,7 @@ spec:
         api: external
     spec:
       containers:
-      - image: andrewjameswormald/udagram:frontend-latest
+      - image: andrewjameswormald/viewagram:frontend-latest
         name: frontend
         imagePullPolicy: Always
         ports:

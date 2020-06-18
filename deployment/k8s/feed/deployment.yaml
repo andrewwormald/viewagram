@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: backend-feed
-        image: andrewjameswormald/udagram:feed-latest
+        image: andrewjameswormald/viewagram:feed-latest
         imagePullPolicy: Always
         readinessProbe:
           httpGet:

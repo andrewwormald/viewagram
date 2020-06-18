@@ -3,16 +3,16 @@ services:
   reverseproxy:
     build:
       context: .
-    image: andrewjameswormald/udaview:reverseproxy-latest
+    image: andrewjameswormald/viewagramreverseproxy-latest
   backend_user:
     build:
       context: ../../backend-user
-    image: andrewjameswormald/udaview:user-latest
+    image: andrewjameswormald/viewagramuser-latest
   backend_feed:
     build:
       context: ../../backend-feed
-    image: andrewjameswormald/udaview:feed-latest
+    image: andrewjameswormald/viewagramfeed-latest
   frontend:
     build:
       context: ../../frontend
-    image: andrewjameswormald/udaview:frontend-latest
+    image: andrewjameswormald/viewagramfrontend-latest
