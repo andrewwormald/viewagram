@@ -1,7 +1,7 @@
 version: "3"
 services:
   reverseproxy:
-    image: andrewjameswormald/viewagramreverseproxy-latest
+    image: andrewjameswormald/viewagram:reverseproxy-latest
     ports:
       - 8080:8080
     restart: always
@@ -9,7 +9,7 @@ services:
       - backend-user
       - backend-feed
   backend-user:
-    image: andrewjameswormald/viewagramuser-latest
+    image: andrewjameswormald/viewagram:user-latest
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
@@ -23,7 +23,7 @@ services:
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8300"
   backend-feed:
-    image: andrewjameswormald/viewagramfeed-latest
+    image: andrewjameswormald/viewagram:feed-latest
     volumes:
       - $HOME/.aws:/root/.aws
     environment:
@@ -37,6 +37,6 @@ services:
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8200"
   frontend:
-    image: andrewjameswormald/viewagramfrontend-latest
+    image: andrewjameswormald/viewagram:frontend-latest
     ports:
       - "8100:80"

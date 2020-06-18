@@ -5,8 +5,7 @@
 export const environment = {
   production: false,
   appName: 'Viewagram',
-  apiHost: 'http://localhost:8080/api/v0',
-  awsAPIHost: 'a5b20ed8f14d147f1805f283222f49f2-856793017.us-east-2.elb.amazonaws.com:8080/api/v0'
+  apiHost: 'http://a5b20ed8f14d147f1805f283222f49f2-856793017.us-east-2.elb.amazonaws.com:8080/api/v0'
 };
 
 /*
